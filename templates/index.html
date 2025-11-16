@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Free Text to Speech (TTS)</title>
+<h1>Free Text to Speech Converter</h1>
+
+<form action="/speak" method="POST">
+  <textarea name="text" rows="5" cols="40" placeholder="Enter your text here..." required></textarea><br><br>
+
+  <label for="language">Select Language:</label>
+  <select name="language" id="language">
+    {% for code, name in languages.items() %}
+      <option value="{{ code }}">{{ name }}</option>
+    {% endfor %}
+  </select><br><br>
+
+  <button type="submit">Convert to MP3</button>
+</form>
